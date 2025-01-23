@@ -3,7 +3,7 @@ Repositório dedicado a acompanhar meu progresso nos estudos de engenharia de da
 
 ## Cursos
 
-  *  Python, Bash amd SQL Essencials for Data Engineering (Completo)
+  *  Python, Bash and SQL Essencials for Data Engineering (Completo)
 
 ## Projetos
 
