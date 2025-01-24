@@ -11,10 +11,9 @@ Termos-chaves:
 
 * Shebang: A primeira linha de um script Bash que começa com #! indica ao interpretador a liguagem para executar o script. Por exemplo: "#!/bin/bash", "#!/bin/python3"
 
-Variável de ambiente: Variavel disponivel globalmente para shells e processos. Usado para configurar o comportamento do shell linux
+* Variável de ambiente: Variavel disponível globalmente para shells e processos. Usado para configurar o comportamento do shell linux.
 
-*Alias: Um atalho que faz referência a um comando. Usado para reduzir a digitação de comandos usados com frequência.
-
+* Alias: Um atalho que faz referência a um comando. Usado para reduzir a digitação de comandos usados com frequência.
 
 Exemplos:
 
