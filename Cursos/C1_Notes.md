@@ -126,6 +126,121 @@ ssh-keygen -t rsa
 #Usando SSH a gente é capaz de rodar comandos em nossa maquina local(desktop) em uma maquina virtual na núvem (Servidor Remoto). (AWS/Codeppace)
 ```
 
+## Configurando Shell
+
+  A configuração do shell ocorre com a alteração do arquivo /.bashrc, nele podemos adicionar alias(atalhos), exportar variáveis ambientes, criar um ambiente virtual automaticamente na hora de execuração. Basicamente podemos colocar tudo que queiramos automatizar nesse arquivo, desta forma o shell automaticamente realiza algumas ações ao ser iniciado.
+
+* alias: Funciona como um atalho para comandos e caminhos de arquivos. É como se fosse uma função variável que retorna um comando especifico ou arquivo para que possamos encurtar atividades repetitivas.
+
+* source: Carrega e executa um script ou arquivo no shell atual.
+       
+* export: Determina uma váriavel ambiente para que possa ser usada por processos filhos. É como se dessemos um escopo global a uma váriavel 
+
+* Ambiente Virtual: Um ambiente isolado em python, como se fosse uma máquiva virtual (porém é somente um ambiente shell separado, não uma virtual machine em sí) somente com python separada de todo sistema para que vc possa trabalhar sem alterar o seu sistema principal, ou para que vc possa trabalhar com versões diferentes do python.
+
+* Plugin: Ferramentas adicionais que aumentam ou melhoram as funcionalidades do nosso Shell (Como o zshrc que eu quase apaguei sem querer ontem).
+
+```
+# Alias example
+alias documents="cd ~/Documents"
+documents           # Changes to Documents directory
+
+ # Source example
+source ~/.bashrc    # Reloads bash config
+
+# Export example
+export API_KEY="123abc"
+python script.py    # script.py can access $API_KEY
+
+# Virtual environment
+python3 -m venv my_env
+source my_env/bin/activate # Activates the environment
+
+ # Plugin
+source ~/.zshrc # Reloads zsh config with plugins
+
+```
+
+
+### Variáveis em Shell
+
+* Variável do Shell: Variável que existe apenas dentro do Shell e armazena dados para serem usados nos scripts ou outros processos.
+```
+# Shell Variable
+food="apple"
+echo $food
+```
+
+* export: Comando que permite uma variável do shell ser acessada por por Shells/Processos filhos.
+```
+# Export for child process access
+export food="apple"
+bash
+echo $food
+```
+
+* source: Executa um script no shell atual, desta forma, qualquer variável/atalho se tornarão disponiveis no ambiente atual.
+```
+# Source to load current environment
+source ./script.sh
+echo $food
+```
+
+* Processos pais/filhos: Processos pais iniciam outros processos. Processos filhos herdam variáveis e permissões dos processos pais.
+```
+# Parent/Child Processes
+export food="apple"
+bash
+echo "In child - $food"
+```
+
+* Python: É possivel usar váriaveis passadas globalmente através do export para ser usadas com outras linguagens, como python através da biblioteca OS.
+```
+# Access shell variable in Python
+import os
+print(os.environ['food'])
+```
+
+### Fluxos Padrão
+  Fluxo que segue segue os dados. A entrada de um comando (**stdin**), a saída da informação após esse comando (**stdout**) e os erros de fluxo, que na metáfora do encanamento do fluxo de dados, seria algum bloqueio na tubulação.
+```
+# Example capturing output of ls command to output.txt file
+        ls -l /home > output.txt
+```
+
+**Standard input** (**stdin**): Dados que são inseridos no programa ou fluxo. Geralmente por entrada do usuário ou piping de outro processos.
+```
+# Example reading user input into variable
+read -p "Enter file name: " filename
+echo "You entered: $filename"
+```
+
+**Standard output** (**stdout**): É o destino da informação após um processo, se ele vai pra outro processo através de um piping, se vai ser escrito em um arquivo ou ser exibido no terminal.
+```
+# Example piping echo output to sort and unique
+echo -e "apple\nbanana\napple" | sort | uniq -c
+```
+
+**Standard error** (**stderr**): Onde a saída de um erro é exibida (lembrando que não necessariamente estamos falando da exibição no terminal, mas sim, onde a informação de um erro é armazenada).
+Uma coisa interessante para trabalhar com erros é poder envia-los para outro lugar.
+```
+# Example redirecting errors from invalid command to errors.txt
+ls -l invalid 2>> errors.txt
+ls -l /var/FAKEDIR 2> /dev/null
+```
+
+**Piping**: Justamente como a metafora da tubulação, piping é conectar o stdout de um processo para o stdin de outro, desta forma criando um fluxo nesta tubulação.
+E é basicamente a forma de se trabalhar mais eficiente em bash
+```
+# Chaining grep, sort and uniq commands
+ps -ef | grep python | sort | uniq -c
+```
+
+
+
+
+
+
 
 
 
