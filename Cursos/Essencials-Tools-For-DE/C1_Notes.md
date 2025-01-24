@@ -331,7 +331,7 @@ backup_docs(){
 backup_docs
 ```
 
-**CLI(Command Line Interface):** Um script que aceita inputs, como flags ou argumentos para controlar seu comportamento.
+**CLI (Command Line Interface):** Um script que aceita inputs, como flags ou argumentos para controlar seu comportamento.
 ```
 #!/bin/bash
 # CLI tool to print a phrase multiple times
