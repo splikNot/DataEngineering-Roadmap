@@ -236,7 +236,132 @@ E é basicamente a forma de se trabalhar mais eficiente em bash
 ps -ef | grep python | sort | uniq -c
 ```
 
+## Lógica do Shell e controle de fluxo
 
+**Controle de fluxo:** Ordem em que cada declaração e comandos são executados em um programa. Geralmente são operações do tipo loop, logica condicional, etc.
+    É interessante nesses exemplos olhar a sintaxe usada para declarar loops e etc. Bash estranhamente não usa simbolos para operadores lógicos, deve ser por que eles usam pra realizar comandos. O que é engraçado. Desciobri na base da dor que operadores lógicos precisam ir dentro de parenteses duplos, como no looping abaixo:
+```
+# Vou inserir o looping feito em um dos meus scripts
+```
+
+**Lógica condicional:**  Dispensa comentários sobre estrutura condicionais. Apenas preciso me atentar à sintaxe das estruturas. (if, else, etc)
+```
+# If-else example
+if [ $myvar -gt 10 ]; then
+    echo "myvar is greater than 10"
+else
+    echo "myvar is 10 or less"
+fi
+```
+
+**Loops:** Estruturas de repetição. (while, for).
+```
+# For loop
+for i in {1..10}; do
+    echo "Welcome $i times"
+done
+```
+
+**Operadores Lógicos:** (And, Or, etc) GPT deu uma aula completa de operadores lógicos, revisar depois;
+```
+# And logical example
+if [ $x -gt 2 ] && [ $y -lt 10 ]; then
+    echo "x meets both conditions"
+fi
+```
+
+## Manipulando dados com shell
+
+* Truncamento: Reduz o tamanho de um arquivo com comandos como head e tail.
+```
+# Truncate - Get first 5 lines
+head -n 5 file.txt
+# Truncate - Get last line
+tail -n 1 file.txt
+```
+
+* Filtrar: Procurar por padrões em um ARQUIVO. (grep).
+```
+# Filter - Get lines with "error"
+grep "error" file.log
+```
+
+* Cortar: Extrai uma coluna de um arquivo. (cut).
+```
+# Cut - Get 2nd column from file
+cut -f2 file.csv
+```
+
+* Encontrar: Procura por ARQUIVOS/PASTAS recursivamente. (find).
+```
+# Find - Find files named "data.csv"
+find . -name "data.csv"
+```
+
+* Localizar: Procura os arquivos de acordo com PALAVRAS no seu nome, e não no nome exato. (locate).
+```
+# Locate - Find files containing "stats"
+locate "*stats*"
+```
+
+
+## Scripts em Bash e CLI:
+
+As três principais coisas na estrutura de um script são: *Shebang*, *debug mode* e *declarações e variáveis*.
+**Declarações:** Um comando individual executado no shell. (grep, ls, rm). Declarações são *efêmeros* (transitórios).
+```
+# Grep statement searches for a pattern in a file
+grep "localhost" /etc/hosts
+```
+
+**Script:** Arquivo contendo uma sequência declarações em shell e lógica para automatizar processos. Geralmente são arquivos executaveis to tipo ".sh", mas também pdem ser do tipo ".py";
+```
+#!/bin/bash
+
+# Backup script archives a directory
+tar -cvzf /backups/documents.tar.gz /documents
+```
+
+**Função:** Operação que pode ser reutilizada diversas vezes para executar uma tarefa. Uma função só precisa ser declarada uma vez, dessa forma facilitando seu uso posterior no programa. (Ela precisa ser carregada no ambiente através de um source).
+```
+backup_docs(){
+    tar -cvzf /backups/documents.tar.gz /documents
+}
+# Call the backup function
+backup_docs
+```
+
+**CLI(Command Line Interface):** Um script que aceita inputs, como flags ou argumentos para controlar seu comportamento.
+```
+#!/bin/bash
+# CLI tool to print a phrase multiple times
+times=$1   #Declaração dos argumentos 
+phrase=$2    #Na ordem em que são passados
+
+for ((i=0; i<$times; i++)); do
+    echo $phrase
+done
+```
+
+**Array:** Estrutura de dados que organiza seus dados armazenados em indexes de valores inteiros.
+```
+files=(/etc/hosts /etc/profile /etc/bashrc)
+
+for file in "${files[@]}"; do
+    ls -l "$file"
+done
+```
+
+**Debug mode:** Os comandos abaixo podem ser executados quando chamados na linha de código.Mas, também podem ser ativados no inicio do script, no Shebang: #!/usr/bin/bash -xv (Ativa o modo verbose e debbug).
+    - set -e: Coloca em modo estrito, executa um exit no shell quando um comando falha;
+    - set -v: Coloca o Shell em modo verbose, ou seja. Ele irá printar cada linha do script antes de executa-la. Muito importante para depuração e entender o que está acontecendo.
+    - set -x: Coloca o Shell em modo debug. Neste modo ele irá atuar semelhante ao modo verbose. Só que ao invés exibir as linhas do scripts exatamente como estão no arquivo. Ele irá executar as variáveis ou substituições e etc.
+    - CLI: Parece um pouco com a forma de orientação objeto no python. Vc define uma função principal e coloca uns métodos personalizados à essa sua ferramenta. Parece ser menos complexo do que eu consigo explicar.
+
+**Dica:** Comando "xargs" é importante para passar diversas entradas para aplicar algum comando ou script e serve até mesmo em CLI's.
+
+
+    
 
 
 
