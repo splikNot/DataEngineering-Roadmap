@@ -1,13 +1,13 @@
-# Programa de cursos integrados: Fundamentos de Python, Bash e SQL para engenharia de dados
+# Linux e Bash para enhenharia de dados
 
-#Usando o Linux
+## Usando o Linux
 
 Termos-chaves:
 
 
-Shell do linux: A interface de linha de comando do sistema linux
+* Shell do linux: A interface de linha de comando do sistema linux
 
-Script em Bash: Scripts escritos em linguagem Bash shell do linux
+* Script em Bash: Scripts escritos em linguagem Bash shell do linux
 
 Shebang: A primeira linha de um script Bash que começa com #! indica o interpretador para executar o script. Por exemplo: "#!/bin/bash"
 
