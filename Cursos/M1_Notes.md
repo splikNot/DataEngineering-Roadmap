@@ -1,4 +1,4 @@
-# Linux e Bash para enhenharia de dados
+# Linux e Bash para enghenharia de dados
 
 ## Usando o Linux
 
@@ -9,7 +9,7 @@ Termos-chaves:
 
 * Script em Bash: Scripts escritos em linguagem Bash shell do linux
 
-Shebang: A primeira linha de um script Bash que começa com #! indica o interpretador para executar o script. Por exemplo: "#!/bin/bash"
+* Shebang: A primeira linha de um script Bash que começa com #! indica ao interpretador a liguagem para executar o script. Por exemplo: "#!/bin/bash", "#!/bin/python3"
 
 Variável de ambiente: Variavel disponivel globalmente para shells e processos. Usado para configurar o comportamento do shell linux
 
