@@ -40,7 +40,7 @@ ll
 
 
 ### Comandos Shell:
-Possuem a seguinte estrutura "cmd -option target".
+Possuem a seguinte estrutura: "cmd -option target".
 ```
 # Se eu for no terminal, entrar no diretorio /usr/bin e der ls -l eu consigo ver uma lista de todos os comandos possiveis
 cd /usr/bin
@@ -79,19 +79,19 @@ Alguns Comandos:
 
 ### Shell Piping
 
-Piping: Conectar a saída(stdout) de um comando com a entrada(stdin) de outro comando usando o símbolo pipe "|".
+**Piping:** Conectar a saída(stdout) de um comando com a entrada(stdin) de outro comando usando o símbolo pipe "|".
 Ex: (ls -l | wc -l): Lista os arquivos e realiza um pipe com o comando wc.
 
-Redirecionamento: Redireciona a saída de um comando para um arquivo ao invés da variável global de saída (stdout) ">".
+**Redirecionamento:** Redireciona a saída de um comando para um arquivo ao invés da variável global de saída (stdout) ">".
 Ex: (ls -l > output.txt):
 
-Execução condicional: Encadeia comandos usando "&&" para executar o próximo comando somente se o primeiro for bem sucedido.
+**Execução condicional:** Encadeia comandos usando "&&" para executar o próximo comando somente se o primeiro for bem sucedido.
 Ex: (ls file && echo "File exists").
 
-Append: Adiciona um conteúdo ao final de um arquivo usando o comando ">>", sem sobrescrevê-lo.
+**Append:** Adiciona um conteúdo ao final de um arquivo usando o comando ">>", sem sobrescrevê-lo.
 Ex: ("Nova linha de texto" >> arquivo.txt)
 
-Caracteres de controle: São caracteres especiais que geralmente não são vistos como texto comum, mas que desempenham funções especificas no fluxo de
+**Caracteres de controle:** São caracteres especiais que geralmente não são vistos como texto comum, mas que desempenham funções especificas no fluxo de
 entradas/saídas ou na manipução de dados. Segue alguns comandos:
 
  - Caractere de nova linha (\n): Quebra de linha;
@@ -122,7 +122,7 @@ Criando uma chave SSH e usando com o github:
 #Para criar um par de chaves SSH no ambiente linux que vc estiver usando, vc usa o comando: "" e cole a chave gerada na parte de Configurações > Chaves SSH e GPC(?):
 ssh-keygen -t rsa
 # Copie e cole a chave gerada na parte Configurações > Chaves SSH E GPC;
-# Desta forma agora é possivel fazer download, cópias, uploads entre outras ações usando o link de repositório do github, como por exemplo: "https://github.com/splikNot/CDataEngineering-Roadmap.git"
+# Desta forma agora é possivel fazer download, cópias, uploads entre outras ações usando o link de repositório do github, como por exemplo: "https://github.com/splikNot/DataEngineering-Roadmap.git"
 #Usando SSH a gente é capaz de rodar comandos em nossa maquina local(desktop) em uma maquina virtual na núvem (Servidor Remoto). (AWS/Codeppace)
 ```
 
