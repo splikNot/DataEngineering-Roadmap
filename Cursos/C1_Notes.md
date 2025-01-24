@@ -1,4 +1,4 @@
-# Linux e Bash para enghenharia de dados
+# Linux e Bash para engenharia de dados
 
 ## Usando o Linux
 
