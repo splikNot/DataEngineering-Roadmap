@@ -353,10 +353,11 @@ done
 ```
 
 **Debug mode:** Os comandos abaixo podem ser executados quando chamados na linha de código.Mas, também podem ser ativados no inicio do script, no Shebang: #!/usr/bin/bash -xv (Ativa o modo verbose e debbug).
-    - set -e: Coloca em modo estrito, executa um exit no shell quando um comando falha;
-    - set -v: Coloca o Shell em modo verbose, ou seja. Ele irá printar cada linha do script antes de executa-la. Muito importante para depuração e entender o que está acontecendo.
-    - set -x: Coloca o Shell em modo debug. Neste modo ele irá atuar semelhante ao modo verbose. Só que ao invés exibir as linhas do scripts exatamente como estão no arquivo. Ele irá executar as variáveis ou substituições e etc.
-    - CLI: Parece um pouco com a forma de orientação objeto no python. Vc define uma função principal e coloca uns métodos personalizados à essa sua ferramenta. Parece ser menos complexo do que eu consigo explicar.
+    * set -e: Coloca em modo estrito, executa um exit no shell quando um comando falha;
+    * set -v: Coloca o Shell em modo verbose, ou seja. Ele irá printar cada linha do script antes de executa-la. Muito importante para depuração e entender o que está acontecendo.
+    * set -x: Coloca o Shell em modo debug. Neste modo ele irá atuar semelhante ao modo verbose. Só que ao invés exibir as linhas do scripts exatamente como estão no arquivo. Ele irá executar as variáveis ou substituições e etc.
+    
+**CLI:** Parece um pouco com a forma de orientação objeto no python. Vc define uma função principal e coloca uns métodos personalizados à essa sua ferramenta. Parece ser menos complexo do que eu consigo explicar.
 
 **Dica:** Comando "xargs" é importante para passar diversas entradas para aplicar algum comando ou script e serve até mesmo em CLI's.
 
