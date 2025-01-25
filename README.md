@@ -3,11 +3,11 @@ Repositório dedicado a acompanhar meu progresso nos estudos de engenharia de da
 
 ## Cursos
 
-  *  Python, Bash and SQL Essencials for Data Engineering (Completo)
-     - Curso A
-     - Curso B
-     - Curso C
-     - Curso D
+  *  Python, Bash and SQL Essencials for Data Engineering ✅
+     - Python and Pandas for Data Engineering ✅
+     - Linux and Bash for Data Engineering ✅
+     - Scripting with Python and SQL for Data Engineering ✅
+     - Web Applications and Command Line Tools for Data Engineering ✅
 
 
 ## Projetos
