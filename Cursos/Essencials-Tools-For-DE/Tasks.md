@@ -1,7 +1,5 @@
 # Exercicios, Desafios e Projetos
 
-Desafio: https://www.coursera.org/learn/python-and-pandas-for-data-engineering-duke/ungradedLab/QkABm/pandas-final-challenge-life-expectancy-and-happiness
-
 Lab: https://www.coursera.org/learn/linux-and-bash-for-data-engineering-duke/ungradedLab/8uNpt/building-a-bash-cli-with-options
 
 Desafio 1: https://www.coursera.org/learn/scripting-with-python-sql-for-data-engineering-duke/supplement/v2IvF/create-a-reporting-script-for-file-sizes
